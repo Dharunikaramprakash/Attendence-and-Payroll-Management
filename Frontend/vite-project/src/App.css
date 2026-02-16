@@ -1,0 +1,47 @@
+/* App.css - App-specific layout */
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #2f3640;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+main {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 70vh;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  color: #888;
+}
+.employee-container {
+    width: 80%;          /* control width */
+    margin: 40px auto;   /* center horizontally */
+    background-color:antiquewhite;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
