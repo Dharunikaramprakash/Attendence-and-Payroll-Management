@@ -73,7 +73,7 @@ function Employees() {
   };
 
   return (
-    <div  class="employee-container">
+    <div  className="employee-container">
       <h2>Employees List</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}

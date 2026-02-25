@@ -40,47 +40,53 @@ function EmployeeDashboard() {
     navigate("/");
   };
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Employee Panel</h2>
+  <div className="dashboard-container">
+    
+    <div className="dashboard-header">
+      <h2>Employee Dashboard</h2>
+      <button className="logout-btn" onClick={emplogout}>
+        Logout
+      </button>
+    </div>
 
-      <nav style={{ marginBottom: "20px" }}>
-        <NavLink
-          to="/employee/attendance"
-          style={({ isActive }) => ({ marginRight: "10px", color: isActive ? "green" : "blue" })}
-        > 
-          Attendance
+    <div className="dashboard-card">
+      
+      <nav className="dashboard-nav">
+        <NavLink to="/employee/attendance" className="nav-item">
+          Mark Attendance
         </NavLink>
-        <NavLink
-          to="/employee/myattendance"
-          style={({ isActive }) => ({ marginRight: "10px", color: isActive ? "green" : "blue" })}
-        >
+
+        <NavLink to="/employee/myattendance" className="nav-item">
           My Attendance
         </NavLink>
-        <NavLink
-          to="/employee/mypayroll"
-          style={({ isActive }) => ({ color: isActive ? "green" : "blue" })}
-        >
+
+        <NavLink to="/employee/mypayroll" className="nav-item">
           My Payroll
         </NavLink>
       </nav>
 
-      {message && <p style={{ color: "red" }}>{message}</p>}
+      {message && <p className="message">{message}</p>}
 
       <Routes>
-        
-        <Route path="attendance" element={
-          <div>
-            <h3>Mark Attendance</h3>
-            <button onClick={login} style={{ marginRight: "10px" }}>Login</button>
-            <button onClick={logout}>Logout</button>
-          </div>
-        } />
+        <Route
+          path="attendance"
+          element={
+            <div className="attendance-actions">
+              <h3>Mark Attendance</h3>
+              <div className="btn-group">
+                <button onClick={login}>Login</button>
+                <button onClick={logout}>Logout</button>
+              </div>
+            </div>
+          }
+        />
         <Route path="myattendance" element={<MyAttendance />} />
         <Route path="mypayroll" element={<MyPayroll />} />
-      </Routes><br></br>
-      <button onClick={emplogout}>Employee Logout</button>
+      </Routes>
+
     </div>
-  );
+  </div>
+);
 }
 
 export default EmployeeDashboard;

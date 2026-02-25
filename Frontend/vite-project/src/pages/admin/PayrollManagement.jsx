@@ -52,27 +52,62 @@ function PayrollManagement() {
 
 
   return (
-    <div>
-      <h3>Employee Payroll</h3>
-
-      <button onClick={generatePayroll}>
-  Generate Payroll
-</button>
-
-      {payrolls.map(pay => (
-        <div key={pay._id}>
-          Net Pay: ₹{pay.netPay} -
-          {pay.approved ? "Approved" : "Pending"}
-
-          {!pay.approved && (
-            <button onClick={() => approve(pay._id)}>
-              Approve
-            </button>
-          )}
-        </div>
-      ))}
+  <div className="employee-container">
+    <div className="payroll-header">
+      <h2>Employee Payroll</h2>
+      <button className="generate-btn" onClick={generatePayroll}>
+        Generate Payroll
+      </button>
     </div>
-  );
+
+    {payrolls.length === 0 ? (
+      <p>No payroll records found.</p>
+    ) : (
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Net Pay</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {payrolls.map((pay) => (
+            <tr key={pay._id}>
+              <td>{pay.month} / {pay.year}</td>
+              <td>₹{pay.netPay}</td>
+
+              <td>
+                <span
+                  className={
+                    pay.approved ? "status approved" : "status pending"
+                  }
+                >
+                  {pay.approved ? "Approved" : "Pending"}
+                </span>
+              </td>
+
+              <td>
+                {!pay.approved ? (
+                  <button
+                    className="approve-btn"
+                    onClick={() => approve(pay._id)}
+                  >
+                    Approve
+                  </button>
+                ) : (
+                  "-"
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+);
 }
 
 export default PayrollManagement;

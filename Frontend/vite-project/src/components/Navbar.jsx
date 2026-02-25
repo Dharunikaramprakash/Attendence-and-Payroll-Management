@@ -9,27 +9,30 @@ function Navbar() {
     navigate("/");
   };
 
-  return (
-    <div style={{ display: "flex", gap: "20px", padding: "10px", background: "#eee" }}>
-      
+return (
+  <div className="navbar">
+    
+    <div className="nav-links">
       {role === "admin" && (
         <>
           <Link to="/admin/employees">Employees</Link>
-          
         </>
       )}
 
       {role === "employee" && (
         <>
           <Link to="/employee">Attendance</Link>
-          <Link to="/employee/attendance">My Attendance</Link>
-          <Link to="/employee/payroll">My Payroll</Link>
+          <Link to="/employee/myattendance">My Attendance</Link>
+          <Link to="/employee/mypayroll">My Payroll</Link>
         </>
       )}
-
-      <button onClick={logout}>Logout</button>
     </div>
-  );
+
+    <button className="logout-btn" onClick={logout}>
+      Logout
+    </button>
+  </div>
+);
 }
 
 export default Navbar;

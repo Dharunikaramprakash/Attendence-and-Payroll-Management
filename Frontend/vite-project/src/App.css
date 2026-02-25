@@ -1,47 +1,237 @@
-/* App.css - App-specific layout */
-
+/* Layout */
 .App {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
 }
 
-header {
-  background-color: #2f3640;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
   color: white;
-  padding: 10px 20px;
+  
+  margin-bottom: 30px;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #e60000;
+}
+
+/* Card Container */
+.employee-container {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2a5298;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1e3c72;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #2a5298;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f9fc;
+}
+
+tbody tr:hover {
+  background-color: #eef3ff;
+}
+
+/* Forms */
+form {
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+  border-color: #2a5298;
+}
+
+/* Login Page */
+.login-card {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+}
+/* Dashboard Layout */
+
+.dashboard-container {
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.nav-item {
+  padding: 8px 16px;
   border-radius: 8px;
+  color: #2a5298;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-item.active {
+  background-color: #2a5298;
+  color: white;
+}
+
+.nav-item:hover {
+  background-color: #eef3ff;
+}
+
+.attendance-actions {
+  text-align: center;
+}
+
+.btn-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.message {
+  color: red;
+  margin-bottom: 15px;
+}
+
+/* Payroll Header */
+.payroll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-nav {
-  display: flex;
-  gap: 15px;
+.generate-btn {
+  background-color: #2a5298;
 }
 
-main {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  min-height: 70vh;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.generate-btn:hover {
+  background-color: #1e3c72;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-  color: #888;
-}
-.employee-container {
-    width: 80%;          /* control width */
-    margin: 40px auto;   /* center horizontally */
-    background-color:antiquewhite;
-    padding: 20px;
-    border-radius: 8px;
+/* Status Badges */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Approve Button */
+.approve-btn {
+  background-color: #28a745;
+}
+
+.approve-btn:hover {
+  background-color: #1e7e34;
 }

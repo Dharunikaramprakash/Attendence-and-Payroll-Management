@@ -16,19 +16,35 @@ function AttendanceView() {
       .then(res => setAttendance(res.data));
   }, [id]);
 
-  return (
-    <div>
-      <h3>Employee Attendance</h3>
+return (
+  <div className="employee-container">
+    <h2>Employee Attendance</h2>
 
-      {attendance.map(att => (
-        <div key={att._id}>
-          {att.employeeID?.name} -
-          {new Date(att.date).toDateString()} -
-          {att.workingHours?.toFixed(2) || 0} hrs
-        </div>
-      ))}
-    </div>
-  );
+    {attendance.length === 0 ? (
+      <p>No attendance records found.</p>
+    ) : (
+      <table>
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>Working Hours</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {attendance.map((att) => (
+            <tr key={att._id}>
+              <td>{att.employeeID?.name}</td>
+              <td>{new Date(att.date).toLocaleDateString()}</td>
+              <td>{att.workingHours?.toFixed(2) || 0} hrs</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+);
 }
 
 export default AttendanceView;

@@ -38,42 +38,38 @@ function Login() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "50px auto", textAlign: "center" }}>
-      <h2>Attendence and Pay roll system</h2><br></br>
+  <div className="login-card">
+    <h2>Attendance & Payroll System</h2>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e)=>setForm({...form,email:e.target.value})}
-          required
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={(e)=>setForm({...form,password:e.target.value})}
-          required
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-        />
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Email"
+        value={form.email}
+        onChange={(e)=>setForm({...form,email:e.target.value})}
+        required
+      />
 
-        <select
-          value={form.role}
-          onChange={(e)=>setForm({...form,role:e.target.value})}
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-        >
-          <option value="employee">Employee</option>
-          <option value="admin">Admin</option>
-        </select>
+      <input
+        type="password"
+        placeholder="Password"
+        value={form.password}
+        onChange={(e)=>setForm({...form,password:e.target.value})}
+        required
+      />
 
-        <button type="submit" style={{ width: "100%", padding: "10px" }}>
-          Login
-        </button>
-      </form>
-    </div>
-  );
+      <select
+        value={form.role}
+        onChange={(e)=>setForm({...form,role:e.target.value})}
+      >
+        <option value="employee">Employee</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+);
 }
 
 export default Login;
