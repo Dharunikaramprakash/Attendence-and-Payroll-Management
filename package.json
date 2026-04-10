@@ -5,8 +5,8 @@
   "main": "backend/index.js",
   "scripts": {
     "build": "cd Frontend && npm install && npm run build",
-    "start": "node backend/index.js",
-    "dev": "nodemon backend/index.js"
+    "start": "node Backend/index.js",
+    "dev": "nodemon Backend/index.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
