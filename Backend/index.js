@@ -43,11 +43,11 @@ app.use("/payroll", payrollRoutes)
 app.use("/admin", adminRoutes)
 
 // Serve frontend build
-app.use(express.static(path.join(__dirname, "../frontend/dist")))
+app.use(express.static(path.join(__dirname, "../Frontend/dist")))
 
 // ✅ FIXED: Catch-all route (IMPORTANT)
 app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    res.sendFile(path.join(__dirname, "../Frontend/dist/index.html"));
 });
 
 // Server
